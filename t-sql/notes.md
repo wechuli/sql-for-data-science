@@ -7,6 +7,10 @@
 
 ## Working with Data Types
 
+Transact-SQL supports a wide range of data types, which can be broadly categorized as exact numeric, approximate numeric, character, date/time, binary, and other (which includes specialized data types for handling data such as XML and spatial data).
+Some data types are compatible, and values can be implicitly converted between them. Conversion between other data types requires the use of explicit conversion functions.
+
+
 ### Exact Numeric
     - tinyint
     - smallint
@@ -44,5 +48,10 @@
     - table
     - timestamp
 ## Conversion
+Implicit Conversion
+
+Explicit Conversion - requires an explicit conversion function
     - CAST/TRY_CAST
     - CONVERT/TRY_CONVERT
+    - PARSE/TRY_PARSE
+    - STR
