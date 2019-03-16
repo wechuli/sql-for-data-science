@@ -55,3 +55,23 @@ Explicit Conversion - requires an explicit conversion function
     - CONVERT/TRY_CONVERT
     - PARSE/TRY_PARSE
     - STR
+
+## Working with Nulls
+ NULL represents a missing or unknown value
+ ANSI behaviour of NULL values
+    - The result of any expression containing NULL value is NULL
+    - Equality comparisons always return false for NULL values
+        -NULL = NULL returns false
+        -NULL is NULL returns true
+### NULL Functions
+ - ISNULL(column/variable,value)- Returns value if the column or variable is NULL
+ - NULLIF(column/variable,value) - Returns NULL if the column or variable is value
+ - COALESCE(column/variable1,column/variable2,..)-Returns the value of the first non_NULL column or variable in the list
+
+ 
+- NULL is used to indicate an unknown or missing value. NULL is not equivalent to zero or an empty string.
+- Arithmetic or string concatenation operations involving one or more NULL operands return NULL. For example, 12 + NULL = NULL.
+- If you need to compare a value to NULL, use the IS operator instead of the = operator. 
+- The ISNULL function returns a specified alternative value for NULL columns and variables.
+- The NULLIF function returns NULL when a column or variable contains a specified value.
+- The COALESCE function returns the first non-NULL value in a specified list of columns or variables).
