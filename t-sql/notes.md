@@ -75,3 +75,15 @@ Explicit Conversion - requires an explicit conversion function
 - The ISNULL function returns a specified alternative value for NULL columns and variables.
 - The NULLIF function returns NULL when a column or variable contains a specified value.
 - The COALESCE function returns the first non-NULL value in a specified list of columns or variables).
+
+## Removing duplicates
+- By default, the SELECT statement returns all rows. If mulitple rows contain the same values for every column, they are duplicated in the results. Using the DISTINCT keyword eliminates duplicates, ensuring that only one row for each distinct combination of column values is returned.
+- The order of rows in the result of a SELECT statement is not guaranteed unless you explicitly specify one or more columns in an ORDER BY clause. You can specify sort direction as ASC (the default) or DESC.
+- You can combine the ORDER BY clause with the TOP keyword to retrict the results so that they include only the top n rows (where n is the number or percentage of rows you want to return).
+- You can implement a query to retrieve a specified "page" of results by using the OFFSET and FETCH keywords with the ORDER BY clause.
+
+##Filtering with predicates
+- Use the WHERE clause to filter the results returned by a SELECT query based on a search condition.
+- A search condition is composed of one or more predicates.
+- Predicates include conditional operators (such as =, >, and <), IN, LIKE, and NOT.
+- You can use AND and OR to combine predicates based on Boolean logic.
