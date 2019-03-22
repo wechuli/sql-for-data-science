@@ -87,3 +87,12 @@ Explicit Conversion - requires an explicit conversion function
 - A search condition is composed of one or more predicates.
 - Predicates include conditional operators (such as =, >, and <), IN, LIKE, and NOT.
 - You can use AND and OR to combine predicates based on Boolean logic.
+
+## Joins
+
+ - inner joins - return only rows where a match is found in both input tables
+ - outer joins
+ - cross joins
+ - self joins
+
+ combine rows from multiple tables by specifying matching criteria, usually based on primary key- foreign key relationships
