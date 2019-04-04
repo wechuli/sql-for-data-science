@@ -29,7 +29,8 @@ on od.SalesOrderID = oh.SalesOrderID
 order by p.ProductID;
 
 
---
+-- outer join and inner join
+
 select p.Name as ProductName, c.Name as Category, oh.SalesOrderNumber
 From SalesLT.Product as p
 left outer join SalesLT.SalesOrderDetail as od
