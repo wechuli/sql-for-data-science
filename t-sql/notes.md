@@ -113,3 +113,14 @@ combine rows from multiple tables by specifying matching criteria, usually based
 - Use a Left Outer Join to include all rows from the first table and values from matched rows in the second table. Columns in the second table for which no matching rows exist are populated with NULLs.
 - Use a Right Outer Join to include all rows from the second table and values from matched rows in the first table. Columns in the first table for which no matching rows exist are populated with NULLs.
 - Use a Full Outer Join to include all rows from the first and second tables. Columns in the either table for which no matching rows exist are populated with NULLs.
+
+### Cross joins
+
+- A cross join returns a Cartesian product that includes every combination of the selected columns from both tables.
+- While not commonly used in typical application processing, cross joins can be useful in some specialized scenarios - such as generating test data.
+
+### Self joins
+ - A self-join is an inner, outer, or cross join that matches rows in a table to other rows in the same table.
+ - When defining a self-join, you must specify an alias for at least one instance of the table being joined.
+
+ 
