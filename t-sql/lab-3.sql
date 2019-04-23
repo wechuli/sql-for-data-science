@@ -4,6 +4,12 @@ from SalesLT.Customer;
 select *
 from SalesLT.SalesOrderHeader;
 
+select * 
+from SalesLT.SalesOrderDetail;
+
+select *
+from SalesLT.Product;
+
 select *
 from SalesLT.Address;
 
@@ -32,10 +38,41 @@ ON c.CustomerID = ca.CustomerID AND AddressType = 'Main Office'
 JOIN SalesLT.Address AS a
 ON ca.AddressID = a.AddressID;
 
--- 
-
+-- 1
 select cu.CompanyName, cu.FirstName, cu.LastName,soh.TotalDue,soh.SalesOrderID
 from SalesLT.Customer as cu
 left join SalesLT.SalesOrderHeader as soh
 on soh.CustomerID = cu.CustomerID
 order by soh.TotalDue desc;
+
+-- 2
+select cu.CustomerID,cu.CompanyName,cu.FirstName,cu.LastName,cu.Phone
+from SalesLT.Customer as cu
+left join SalesLT.CustomerAddress as ca
+on ca.CustomerID = cu.CustomerID
+where ca.AddressID is null;
+
+-- 3
+select c.CustomerID,prod.ProductID
+from SalesLT.Customer as c
+left join SalesLT.SalesOrderHeader as oh
+on c.CustomerID = oh.CustomerID
+left join SalesLT.SalesOrderDetail as od
+on oh.SalesOrderID = od.SalesOrderID
+full outer join SalesLT.Product as prod
+on prod.ProductID = od.ProductID
+where oh.SalesOrderID is null
+order by prod.ProductID,c.CustomerID;
+
+
+-- Customers and products for which there are no orders
+SELECT c.CustomerID, p.ProductID
+FROM SalesLT.Customer AS c
+FULL JOIN SalesLT.SalesOrderHeader AS oh
+ON c.CustomerID = oh.CustomerID
+FULL JOIN SalesLT.SalesOrderDetail AS od
+ON od.SalesOrderID = oh.SalesOrderID
+FULL JOIN SalesLT.Product AS p
+ON p.ProductID = od.ProductID
+WHERE oh.SalesOrderID IS NULL
+ORDER BY ProductID, CustomerID;
