@@ -123,4 +123,16 @@ combine rows from multiple tables by specifying matching criteria, usually based
  - A self-join is an inner, outer, or cross join that matches rows in a table to other rows in the same table.
  - When defining a self-join, you must specify an alias for at least one instance of the table being joined.
 
- 
+## UNION Queries
+- Union returns a result set of distinct rows combined from all statements
+- union removes duplicates during query processing(affects perfomance)
+- Union all retains duplicates during query processing
+### Guidelines to UNION
+ - Column aliases must be expressed in first query
+ - number of columns must be the same
+ - data types, must be compatible for implicit conversion(or converted explicitly)
+
+## INTERSECT
+- Intersect return only distinct rows that appear in both result set
+## EXCEPT
+- Except return only distinct rows that appear in the first set but not the second - order in which sets are specified matters

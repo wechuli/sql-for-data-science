@@ -40,3 +40,5 @@ on od.SalesOrderID = oh.SalesOrderID
 inner join SalesLT.ProductCategory as c
 on p.ProductCategoryID = c.ProductCategoryID
 order by p.ProductID;
+
+
