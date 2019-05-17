@@ -120,19 +120,39 @@ combine rows from multiple tables by specifying matching criteria, usually based
 - While not commonly used in typical application processing, cross joins can be useful in some specialized scenarios - such as generating test data.
 
 ### Self joins
- - A self-join is an inner, outer, or cross join that matches rows in a table to other rows in the same table.
- - When defining a self-join, you must specify an alias for at least one instance of the table being joined.
+
+- A self-join is an inner, outer, or cross join that matches rows in a table to other rows in the same table.
+- When defining a self-join, you must specify an alias for at least one instance of the table being joined.
 
 ## UNION Queries
+
 - Union returns a result set of distinct rows combined from all statements
 - union removes duplicates during query processing(affects perfomance)
 - Union all retains duplicates during query processing
+
 ### Guidelines to UNION
- - Column aliases must be expressed in first query
- - number of columns must be the same
- - data types, must be compatible for implicit conversion(or converted explicitly)
+
+- Column aliases must be expressed in first query
+- number of columns must be the same
+- data types, must be compatible for implicit conversion(or converted explicitly)
 
 ## INTERSECT
+
 - Intersect return only distinct rows that appear in both result set
+
 ## EXCEPT
+
 - Except return only distinct rows that appear in the first set but not the second - order in which sets are specified matters
+
+## Introduction to Functions
+
+- Scalar Functions -
+    - Configuration
+    - Conversion
+    - Cursor
+    - Date and Time
+- Aggregate Functions - operate on a single row, return a single value
+- Logical Functions - scalar functions that compare multiple values to determine a single output
+- Window Functions - Take one or more input values, return a single summarizing value
+- Grouping with GROUP BY - Operate on a window(set) of rows
+- Filtering with HAVING - Return a virtual table that can be used subsequently in a Transact-SQL statement

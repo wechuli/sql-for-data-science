@@ -1,15 +1,15 @@
 -- Scalar functions
-SELECT YEAR(SellStartDate) SellStartYear, ProductID, Name
+SELECT YEAR(SellStartDate) as SellStartYear, ProductID, Name
 FROM SalesLT.Product
 ORDER BY SellStartYear;
 
-SELECT YEAR(SellStartDate) SellStartYear, DATENAME(mm,SellStartDate) SellStartMonth,
-       DAY(SellStartDate) SellStartDay, DATENAME(dw, SellStartDate) SellStartWeekday,
+SELECT YEAR(SellStartDate) as SellStartYear, DATENAME(mm,SellStartDate) as SellStartMonth,
+       DAY(SellStartDate) as SellStartDay, DATENAME(dw, SellStartDate) as SellStartWeekday,
 	   ProductID, Name
 FROM SalesLT.Product
 ORDER BY SellStartYear;
 
-SELECT DATEDIFF(yy,SellStartDate, GETDATE()) YearsSold, ProductID, Name
+SELECT DATEDIFF(yy,SellStartDate, GETDATE()) as YearsSold, ProductID, Name
 FROM SalesLT.Product
 ORDER BY ProductID;
 
@@ -18,6 +18,9 @@ FROM SalesLT.Product;
 
 SELECT CONCAT(FirstName + ' ', LastName) AS FullName
 FROM SalesLT.Customer;
+
+select *
+from SalesLT.Product;
 
 SELECT Name, ProductNumber, LEFT(ProductNumber, 2) AS ProductType
 FROM SalesLT.Product;
