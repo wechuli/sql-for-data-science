@@ -151,6 +151,7 @@ combine rows from multiple tables by specifying matching criteria, usually based
     - Conversion
     - Cursor
     - Date and Time
+    
 - Aggregate Functions - operate on a single row, return a single value
 - Logical Functions - scalar functions that compare multiple values to determine a single output
 - Window Functions - Take one or more input values, return a single summarizing value
