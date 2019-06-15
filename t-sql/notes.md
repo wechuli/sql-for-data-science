@@ -157,3 +157,10 @@ combine rows from multiple tables by specifying matching criteria, usually based
 - Window Functions - Take one or more input values, return a single summarizing value
 - Grouping with GROUP BY - Operate on a window(set) of rows
 - Filtering with HAVING - Return a virtual table that can be used subsequently in a Transact-SQL statement
+## SubQueries
+
+### Scala subquery
+ Returns single value to outer query. Can be used anywhere wingle-valued expression is used
+
+### Multi-Valued
+Returns multiple values as a single column set to the outer query. Used with IN predicate.
