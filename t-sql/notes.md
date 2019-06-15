@@ -164,3 +164,10 @@ combine rows from multiple tables by specifying matching criteria, usually based
 
 ### Multi-Valued
 Returns multiple values as a single column set to the outer query. Used with IN predicate.
+
+### Correlated Subqueries
+Most subqueries are self contained and have no connection with the outer query other than passing it results
+Correlated subqueries refer to elemets of tables used in outer query
+ - Dependent on outer query, cannot be executed separately
+ - Behaves as if inner query is executed once per outer row
+ - May return scalar value or multiple values
