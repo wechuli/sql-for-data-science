@@ -157,3 +157,7 @@ combine rows from multiple tables by specifying matching criteria, usually based
 - Window Functions - Take one or more input values, return a single summarizing value
 - Grouping with GROUP BY - Operate on a window(set) of rows
 - Filtering with HAVING - Return a virtual table that can be used subsequently in a Transact-SQL statement
+
+## The Apply Operator
+- The APPLY operator enables you to execute a table-valued function for each row in a rowset returned by a SELECT statement. Conceptually this approach is similar to a correlated subquery
+- Cross Apply returns matching rows, similar to an inner join. OUTER APPLY returns all rows in the original SELECT query results with NULL values for rows where no match was found.
