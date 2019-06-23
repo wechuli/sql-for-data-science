@@ -171,3 +171,7 @@ Correlated subqueries refer to elemets of tables used in outer query
  - Dependent on outer query, cannot be executed separately
  - Behaves as if inner query is executed once per outer row
  - May return scalar value or multiple values
+
+## The Apply Operator
+- The APPLY operator enables you to execute a table-valued function for each row in a rowset returned by a SELECT statement. Conceptually this approach is similar to a correlated subquery
+- Cross Apply returns matching rows, similar to an inner join. OUTER APPLY returns all rows in the original SELECT query results with NULL values for rows where no match was found.
