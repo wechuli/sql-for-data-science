@@ -147,31 +147,70 @@ combine rows from multiple tables by specifying matching criteria, usually based
 ## Introduction to Functions
 
 - Scalar Functions -
-    - Configuration
-    - Conversion
-    - Cursor
-    - Date and Time
-    
+  - Configuration
+  - Conversion
+  - Cursor
+  - Date and Time
 - Aggregate Functions - operate on a single row, return a single value
 - Logical Functions - scalar functions that compare multiple values to determine a single output
 - Window Functions - Take one or more input values, return a single summarizing value
 - Grouping with GROUP BY - Operate on a window(set) of rows
 - Filtering with HAVING - Return a virtual table that can be used subsequently in a Transact-SQL statement
+
 ## SubQueries
 
 ### Scala subquery
- Returns single value to outer query. Can be used anywhere wingle-valued expression is used
+
+Returns single value to outer query. Can be used anywhere wingle-valued expression is used
 
 ### Multi-Valued
+
 Returns multiple values as a single column set to the outer query. Used with IN predicate.
 
 ### Correlated Subqueries
+
 Most subqueries are self contained and have no connection with the outer query other than passing it results
 Correlated subqueries refer to elemets of tables used in outer query
- - Dependent on outer query, cannot be executed separately
- - Behaves as if inner query is executed once per outer row
- - May return scalar value or multiple values
+
+- Dependent on outer query, cannot be executed separately
+- Behaves as if inner query is executed once per outer row
+- May return scalar value or multiple values
 
 ## The Apply Operator
+
 - The APPLY operator enables you to execute a table-valued function for each row in a rowset returned by a SELECT statement. Conceptually this approach is similar to a correlated subquery
 - Cross Apply returns matching rows, similar to an inner join. OUTER APPLY returns all rows in the original SELECT query results with NULL values for rows where no match was found.
+
+* Views
+* Temporary Tables
+* Table Variables
+* Table-Valued Functions
+* Derived Tables
+* Common Table Expressions
+
+### Querying Views
+
+Views are named queries with definitions stored in a database.
+
+- views can provide abstraction, encapsultation and simplification
+- From an administrative perspective, views can provide a security layer to a database
+
+Views may be referenced in a SELECT statement just like a table
+
+### Temporary Tables
+
+Temporary tables are used to hold temporary result sets within a user's session
+
+- Created in tempdb and deleted automatically
+- created with a # prefix
+- Global temporary tables are created with ## prefix
+
+Temporary tables are prefixed with a # symbol (You can also create global temporary tables that can be accessed by other processes by prefixing the name with ##)
+
+Local temporary tables are automatically deleted when the session in which they were created ends. Global temporary tables are deleted when the last user sessions referencing them is closed.
+
+### Table Variables
+
+Introduced because temporary tables can cause recompilations
+Used similarly to temporary tables but scoped to the batch
+Use only on very small datasets. Table variables are prefixed with a @ symbol.Table variables are scoped to the batch in which they are created.
