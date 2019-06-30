@@ -12,8 +12,21 @@ With Rollback Immediate option, will rollback all incomplete transactions and cl
 
 System databases cannot be dropped.
 
-Primary Key is used to uniquely identify each row in a table. Foreign keys are used to enforce database integrity.  A foreign key in one table points to a primary key in another table. The foreign key constarint prevents invalid data from being inserted into the foreign key column. The values that you enter into the foreign key column, has to be one of the values contrained in the table it points to.
+Primary Key is used to uniquely identify each row in a table. Foreign keys are used to enforce database integrity. A foreign key in one table points to a primary key in another table. The foreign key constarint prevents invalid data from being inserted into the foreign key column. The values that you enter into the foreign key column, has to be one of the values contrained in the table it points to.
 
 ## Adding a Foreign Key Constraint
 
-**Alter table ForeignKeyTable add constrain ForeignKeyTable_ForeignKeyColumn_FK foreign key (ForeignKeyColumn) references PrimaryKeyTable(PriamryKeyColumn)
+\*\*Alter table ForeignKeyTable add constrain ForeignKeyTable_ForeignKeyColumn_FK foreign key (ForeignKeyColumn) references PrimaryKeyTable(PriamryKeyColumn)
+
+## Adding a Default Contraint
+
+## Cascading referential integrity
+
+Cascading referential integrity constraint allows us to define the sctions SQL server should take when a user attempts to delete or update a key to which an existing foreign keys points.
+
+Options to handle Cascading referential integrity
+
+1. **No Action** - This is the default behaviour. No Action specifies that if an attempt is made to delete or update a row with a key referenced by foreign keys in existing rows in other tables, an error os raised and the DELETE or UPDATE is rolled back.
+2. **Cascade** - Specifies that if an attempt is made to delete or update a row with a key referenced by foreign keys in existing rows in other tables, all rows containng those foreign keys are also deleted or updated.
+3. **Set Null** - specifies that if an attempt is made to delete or update a row with a key referenced by foreign keys in existing rows in other tables, all rows containing those foreng keys are set to null.
+4. **Set Default** - Specifies that if an attempt is made to delete or update a row with a key referenced by foreign keys in existing rows in other tables, all rows containing those foreign keys are set to default values.
