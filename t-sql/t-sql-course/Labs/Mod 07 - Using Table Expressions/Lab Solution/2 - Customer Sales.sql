@@ -6,7 +6,7 @@ FROM
 	 JOIN SalesLT.Customer AS c
 	 ON SOH.CustomerID = c.CustomerID) AS CustomerSales(CompanyContact, SalesAmount)
 GROUP BY CompanyContact
-ORDER BY CompanyContact;
+ORDER BY SUM(SalesAmount) desc,CompanyContact;
 
 -- Get sales revenue by company and contact (using CTE)
 WITH CustomerSales(CompanyContact, SalesAmount)
