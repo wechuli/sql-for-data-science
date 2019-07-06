@@ -214,3 +214,49 @@ Local temporary tables are automatically deleted when the session in which they 
 Introduced because temporary tables can cause recompilations
 Used similarly to temporary tables but scoped to the batch
 Use only on very small datasets. Table variables are prefixed with a @ symbol.Table variables are scoped to the batch in which they are created.
+
+## Grouping Sets and Pivoting Data
+
+### Grouping Sets
+Grouping sets subclause builds on GROUP BY clause
+Allows multiple groupings to be defined in the same query
+```SQL
+SELECT <column list with aggregates(s)>
+FROM <source>
+GROUP BY
+GROUPING SETS
+(
+    <column_name>, --one or more columns
+    <column_name>, --one or more columns
+    () -- empty paranthesis if aggregating all rows
+
+)
+```
+### Rollup and Cube
+
+ROLLUP provides shortcut for defining grouping sets with combinations that assume input columns form a hierarchy
+
+```SQL
+SELECT StateProvince, City, COUNT(CustomerID) as Customers
+from Sales.vCustomerDetails
+GROUP BY ROLLUP(StateProvince,City)
+ORDER BY StateProvince, City;
+```
+
+CUBE provides shortcut for defining grouping sets in which all possible combinations of grouping sets created.
+
+```SQL
+SELECT SalesPersonName, CustomerName, SUM(Amount) as TotalAmount
+FROM Sales.vSalesOrders
+GROUP BY CUBE(SalesPersonName,CustomerName)
+ORDER BY SalesPersonName,CustomerName;
+```
+
+Multiple grouping sets present a problem in identifying the source of each row in the result set. NULL could come from the source data or could be a placeholder in the grouping set. The GROUPING_ID function provides a method to make a row with a 1 or 0 to identify which grouping set for the row.
+
+
+## Pivoting Data and Unpivoting Data
+
+Pivoting data is rotating data from a rows-based orientation to a columns-based orientation. Distinct values from a single column are projected across as headings for other columns - may include aggregation. Use PIVOT to re-orient a rowset by generating multiple columns from values in a single column
+
+Unpivoting data is rotating data from a columns-based orientation to a rows-based orientation. Spreads or splits values from one source row into one or more target rows. Use UNPIVOT to re-orient multiple columns in an existing rowset into a single column.
