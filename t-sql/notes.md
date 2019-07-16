@@ -260,3 +260,11 @@ Multiple grouping sets present a problem in identifying the source of each row i
 Pivoting data is rotating data from a rows-based orientation to a columns-based orientation. Distinct values from a single column are projected across as headings for other columns - may include aggregation. Use PIVOT to re-orient a rowset by generating multiple columns from values in a single column
 
 Unpivoting data is rotating data from a columns-based orientation to a rows-based orientation. Spreads or splits values from one source row into one or more target rows. Use UNPIVOT to re-orient multiple columns in an existing rowset into a single column.
+
+## Updating Data in a Table
+
+- MERGE modifies data based on a condition
+    - When the source matches the target
+    - When the source has no match in the target
+    - When the target has no match in the source
+    
