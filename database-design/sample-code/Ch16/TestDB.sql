@@ -1,0 +1,25 @@
+SHOW DATABASES;
+USE mysql;
+SHOW TABLES;
+SELECT user password FROM user;
+CREATE DATABASE testdb;
+USE testdb;
+SHOW TABLES;
+CREATE TABLE People (
+  FirstName VARCHAR(40) NOT NULL,
+  LastName VARCHAR(40) NOT NULL,
+  PRIMARY KEY (FirstName, LastName)
+);
+SHOW TABLES;
+INSERT INTO People VALUES("Assam", "Lembek");
+INSERT INTO People VALUES("Nedlim", "Popo");
+INSERT INTO People VALUES("Nedlim", "Popo");
+SELECT * FROM People;
+SELECT * FROM People
+WHERE LastName=’Lembek’;
+SELECT * FROM People
+ORDER BY LastName DESC;
+DROP TABLE People;
+SHOW TABLES;
+DROP DATABASE testdb;
+SHOW DATABASES;

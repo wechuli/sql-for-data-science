@@ -1,0 +1,9 @@
+SELECT * FROM People;
+SELECT * FROM People
+WHERE LastName=’Lembek’;
+SELECT * FROM People
+ORDER BY LastName DESC;
+DROP TABLE People;
+SHOW TABLES;
+DROP DATABASE testdb;
+SHOW DATABASES;

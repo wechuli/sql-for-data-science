@@ -1,0 +1,3 @@
+- Tells you how to plan a database's structure so that the database will be robust, resistant to errors, and flexible enough to accomodate a reasonable amount of future change. It explains how to discover database requirements, build data models to study data needs and refine those models to improve the database effectiveness.
+
+- Topics you need to understand to keep a database running effectively such as database maintenance and security.

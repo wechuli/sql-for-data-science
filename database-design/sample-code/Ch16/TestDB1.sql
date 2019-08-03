@@ -1,0 +1,13 @@
+SHOW DATABASES;
+USE mysql;
+SHOW TABLES;
+SELECT user, password FROM user;
+CREATE DATABASE testdb;
+USE testdb;
+SHOW TABLES;
+CREATE TABLE People (
+  FirstName VARCHAR(40) NOT NULL,
+  LastName VARCHAR(40) NOT NULL,
+  PRIMARY KEY (FirstName, LastName)
+);
+SHOW TABLES;
