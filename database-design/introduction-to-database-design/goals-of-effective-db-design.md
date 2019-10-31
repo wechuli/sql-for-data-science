@@ -31,3 +31,63 @@ Another aspect of the R in CRUD is consistency. The database should provide cons
 ### Validity
 
 Validity is closely related to the idea of consistency. Consistency means different parts of the database don't hold contradictory views of the same information. Validity means data is validated where possible against other pieces of data in the database. In CRUD terms, data can be validated when a record is created, updated or deleted.
+
+### Easy Error Correction
+
+Even a perfectly designed database cannot ensure perfect validity. Though easy corrections are almost free, you need to do a little design work to make them as efficiently and effectively as possible.
+
+### Speed
+
+An important aspect of all of the CRUD components is speed. A well-designed database can create, read, update and delete records quickly. Good design plays a critical role in database efficiency.
+
+### Atomic Transactions
+
+An atomic transaction is a possibly complex series of actions that is considered as a single operation by those not involved in performing the transaction. The transaction either happens completely none of its pieces happen, it cannot happen halfway. Atomic transactions are important for maintaining consistency and validity and are thus important for the R and U.
+
+### ACID
+
+**A** - Atomicity - Atomic means transactions are atomic
+**B** - Consistency - Means the transaction ensures that the database is in a consistent state before and after the transaction. In other words, if the operations within the transaction would violate the database rules, the transaction is rolled back.
+**I** - Isolation means the transaction isolates the details of the transaction from everyone except the person making the transaction. Two transactions operate in isolation and cannot interfere with each other.
+**D** - Durability means that once a transaction is committed, it will not disappear later.
+
+### Persistence and Backups
+
+The data must be persistent. It shouldn't change or disappear by itself. You should perform regular backups.
+
+### Low Cost and Extensibility
+
+Ideally the database should be easy to obtain and install, inexpensive and easily extensible.
+
+### Ease of Use
+
+The first-level users of a database are often programmers and relatively sophisticated database
+users who understand how to navigate through a database. A good database design makes the
+database much more accessible to those users. Just by looking at the names of the tables, fields, and
+other database entities that organize the data, this type of user should be able to figure out how
+different pieces of data go together and how to use them to retrieve the data they need. If those
+sophisticated users can easily understand the database, they can build better user interfaces for the less
+advanced users.
+
+### Portability
+
+A computerized database allows for a portability though the web.
+
+### Security
+
+Locking down your database is mostly a security issue that you should address by using your network’s and database’s security tools. However, there are some design techniques that you can use to make securing the database easier. If you separate the data into categories that different types of users need to manipulate, you can grant different levels of permission to the different kinds of users.Giving users access to only the data they absolutely need not only reduces the chance of a legitimate user doing something stupid or improper, but it also decreases the chance that an attacker can pose as that user and do something malicious
+
+### Sharing
+
+Modern networks can let hundreds or even thousands of users access the same database at the same time from locations scattered across the globe.
+If you compartmentalize the data into categories that different types of users need to use as described in
+the previous section, this not only helps with security but it also helps reduce the amount of data that
+needs to be shipped across the network.
+Breaking the data into reasonable pieces can also help coordinate among multiple users.
+
+Good application design is also important. Even after you prepare the database for efficient use, the
+application still needs to use it properly. But without a good database design, these techniques aren’t
+possible.
+
+### Ability to Perform Complex Calculations
+
