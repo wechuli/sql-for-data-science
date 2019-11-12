@@ -1,0 +1,10 @@
+<!-- Optional XML declaration -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The dude writing this -->
+<Person Profession="Software Developer">
+    <!-- So we can write inside a nest -->
+    <FirstName>Paul</FirstName>
+    <LastName>Stephens</LastName>
+    <NetWorth>$100</NetWorth>
+</Person>

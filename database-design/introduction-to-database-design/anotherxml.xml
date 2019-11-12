@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassSchedule>
+    <Class Name="Ascension for Beginners" Room="Atrium">
+        <!-- Note: Requires Falling 101. -->
+        <Instructor>Peter Parker</Instructor>
+        <Students>
+            <Student>
+                <FirstName>Ben</FirstName>
+                <LastName>Breaker</LastName>
+            </Student>
+            <Student>
+                <FirstName>Carla</FirstName>
+                <LastName>Crash</LastName>
+            </Student>
+            <Student>
+                <FirstName>Dirk</FirstName>
+                <LastName>Drop</LastName>
+            </Student>
+        </Students>
+    </Class>
+    <Class Name="Advanced Pyrotechnics" Room="Field 3">
+        <!-- Note: Requires fire-retardant suit. -->
+        <Instructor>Johnny Storm</Instructor>
+        <Fees Materials="$45" />
+        <Students>
+            <Student>
+                <FirstName>Erica</FirstName>
+                <LastName>Enflame</LastName>
+            </Student>
+            <Student>
+                <FirstName>Frank</FirstName>
+                <LastName>Flammable</LastName>
+                <NickName>Flamb&#xE9;</NickName>
+            </Student>
+        </Students>
+    </Class>
+</ClassSchedule>
