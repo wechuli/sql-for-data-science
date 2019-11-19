@@ -139,3 +139,88 @@ Get input from as many Stakeholders as you can. Always keep in mind, however, th
 Champion is the one who understands the customers’ needs thoroughly and has the authority to make
 the final decisions. Though you should consider everyone’s opinions, the Customer Champion has the
 final word.Take your time and make sure the customers have finished telling you what they think they need.
+
+### 5. Walk a Mile in the User's Shoes
+
+Though you may not be able to actually do the customers' jobs, you may be able to sit next to them while they do it.
+
+### 6. Study Current Operations
+
+After you've walked a mile or two in the customer's shoes, see if there are other ways that you can study the current operation. Often companies have procedure manuals and documentation that describes the customers' roles and responsibilities. Look around for any existing databases that the customers use.
+
+Find out how the information is used and how it relates to other pieces of information.
+
+### 7. Brainstorm
+
+At this point, you should have a decent understanding of the customers’ business and needs. To make
+sure the customer hasn’t left anything out, you can hold brainstorming sessions. Bring in as many Stakeholders
+as you can and let them run wild. Don’t rule out anything yet.
+
+Continue brainstorming until everyone has had their say and it’s clear that no new ideas are appearing.
+
+### 8. Look to the Future
+
+During the brainstorming process, think about future needs. Explicitly ask the customers what they might like to have in future releases. You may be able to include some of those ideas in the current project, but even if you can't, it's nice to know where things are headed. That will help you design your database flexibly so you can more easily incorporate changes in the future.
+
+### 9. Understand the Customers' Reasoning
+
+Even if the suggestions seem to make no sense whatsoever, don’t dismiss them out of hand. Remember
+that the customer has a different perspective than you do. The customer knows a lot more than you
+about his particular business. He may or may not know anything about database design, but it’s entirely
+possible that he has a reason for his obscure requests.
+
+### 10. Learn What the Customers Really Need
+
+Sometimes the customers don't really understand what they need. They think they do and they almost certainly understand the symptoms of their problems, but they don't always make the right cause-and-effect connections.
+
+As you look over the customers’ operation, keep in mind that their real goals may not be exactly what
+they think they are.
+
+Look for the real causes of the customers’ problems and think about ways you can address them. If you
+can see a way to improve operations, suggest it (always keeping in mind that they probably know a
+whole lot more about their business than you do so there’s a good chance that your idea won’t fly).
+
+### 11. Prioritize
+
+At this point, you should have a fair understanding of the customers’ business, at least the pieces that are
+relevant to your project. You should understand at least roughly which customers will be playing which
+roles during the upcoming drama. At a minimum, you should know who the Customer Champion and
+Customer Representatives are so you know who to ask questions.
+
+You should also have a big list of desired features. This list will probably include a lot of unicorns and
+pixie dust — things that would be nice to have but that are obviously unrealistic. It may also include
+things that are reasonable but that would take too much time for your current project.
+
+To narrow the wish list to manageable scope, sit down with the customers and help them prioritize.
+
+Group the features into three categories. Priority 1 (or release 1) features are things that absolutely must
+be in the version of the project that you’re about to start building. This should be the bare-bones essentials
+without which the project will be a failure.
+Priority 2 (or release 2) features are those that the customers can live without until the first version is in
+use and you have time to start working on the next version. If development goes well, you may be able
+to pull some of these features into the first release but the customers should not count on it.
+Priority 3 (or release 3) features are those that the customers think would be nice but that are less important
+than the priority 1 and 2 features. This is where you put the unicorns and pixie dust so you can
+ignore them for now.
+
+### 12. Verify Your Understanding
+
+You should verify one last time that you really understand the customers' needs. Walk through your understanding of the system and explain it to the customers as if they were building the system for you and not the other way around.
+
+### 13. Write the Requirements Document
+
+The requirements document describes the system that you are going to build. This document is sometimes called the product requirements document (PRD), the requirements specification, specification or spec.
+
+At a minimum, the requirements document needs to spell out what you're planning to build and what it will do. It needs to explain the problems that it will solve and it should describe how the customers will use it to solve their problems. It can also include any design or architecture that you’ve already done, and it can include (possibly as attachments or appendixes) summaries of the discussions you’ve had while deciding on the project’s features. The requirements document keeps everyone on track during later design and development.
+
+The requirements document should define deliverables (also called milestones). These should be tasks that you complete along the way that you can show the customer and that can be verified in some meaningful way.
+
+Prototypes also ,make excellent deliverables.
+
+Some of the deliverables defined by the requirements document should be final deliverables. These are
+deliverables that determine whether the project is finished. Like all of the other deliverables, they must
+be measurable to be useful.
+A particularly useful technique for deciding when a project has met its goals is to create use cases. Use
+cases are described in the following section.
+
+### 14. Make Use Cases
