@@ -224,3 +224,41 @@ A particularly useful technique for deciding when a project has met its goals is
 cases are described in the following section.
 
 ### 14. Make Use Cases
+
+A use case is a script that the users can follow to practice solving a particular problem that they will face while using your finished product. These can range in complexity.
+
+Depending on how complete the user interface design is when you are writing the use cases, these may be sketchy or extremely detailed.
+
+When the project is finished, the customers should review all of the use cases and verify that the finished project can handle them all.
+
+Some of the things that you might specify when writing up use cases include:
+
+- **Goals** - A summary of what the use case should achieve
+- **Summary** - An executive overview that your Executive Champion can understand
+- **Actors** - Who will do What? This includes people, your finished system, other systems and so forth. Anyone or anything that will do something
+- **Pre-and post-conditions** - The conditions that should be true before and after the use case is finished.
+- **Normal Flow** - the normal steps that occur during the use case.
+- **Alternative Flow** - Other ways the use case might proceed.
+- **Notes** - Just in case there are special considerations that the person following the use case needs to know.
+
+
+Typical use cases might include:
+❑ The user logging in.
+❑ The user logging out.
+❑ Switching users (if the program allows that).
+❑ Creating a new customer record.
+❑ Editing a customer record.
+❑ Marking a customer record as inactive.
+❑ Creating a new order for an existing customer.
+❑ Creating a new order for a new customer.
+❑ Creating an invoice for an order.
+❑ Sending out late payment notices.
+❑ Creating a replacement invoice in case the customer lost one.
+❑ Receiving a payment.
+❑ Defining a new inventory item (when the CEO decides that you should start selling Rogaine
+for Dogs).
+❑ Adding new items to inventory (for example, when you restock your fuzzy dice supply).
+
+### 15. Decide Feasibility
+
+At some point, you should step back, take a deep breath and decide whether the project is feasible. Is it even possible to design a database to do everything the customer wants it to do?
