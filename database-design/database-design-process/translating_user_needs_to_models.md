@@ -48,10 +48,29 @@ for that one, too.
 
 To build the user interface model, start by making rough sketches of the screens that the user will see. Often these first sketches can come directly from paper forms if any exist.
 
-A large application might include dozens or even hundreds of forms, each of which gives only a partial glimpse of the information contained in the database. Together these mockep-up screens form a user interface model that shines spotlights into the data needed to support the application.
+A large application might include dozens or even hundreds of forms, each of which gives only a partial glimpse of the information contained in the database. Together these mocked-up screens form a user interface model that shines spotlights into the data needed to support the application.
 
 With the user interface model in hand, you are now ready to build a more formal model that shows the entities used by the application in greater detail
 
 ### Semantic Object Models
 
 A semantic object model (SOM) is intended to represent a system at a fairly high level. Though the ideas are somewhat technical, they still relate fairly closely to the way people think about things, so semantic object models are relatively understandable to users.
+
+#### Classes and Objects
+
+Intuitively, a semantic class is a type of thing you might want to represent in your system. This can include physical objects such as people, furniture, inventory items and invoices. It can also include logical abstractions such as report generators, tax years and work queues.
+
+Technically, a semantic class is a named collection of attributes that are sufficient to identify a particular entity. A *semantic object* (SO) is an instance of a semantic class. It is an entity instance that has all of the attributes defined by the class filled in.
+
+Attributes come in 3 flavors: simple, group and object.
+- A *simple attributes* holds a simple value such as string, number or date.
+- A *group attribute* holds a composite value - a value that is composed of other values.
+- An *object attribute* holds a composite value - a value that is composed of other values.
+
+##### cardinality
+
+An attribute's cardinality tells how many values of that attribute an object might have.
+
+##### Identifiers
+
+An *object identifier* is a group of one or more attributes that the users will typically use to identify an object in the class.
