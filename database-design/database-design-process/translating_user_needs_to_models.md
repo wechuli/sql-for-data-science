@@ -1,14 +1,14 @@
 # Translating User Needs into Data Models
 
-You have worked with customers to gain a full understanding of the problem at hand. The result should be a big pile of facts, golas, needs and requirements that should be part of the new database and its surrounding ecosystem. You may already have made some connections among various parts of this information, but mostly it should be a big heap of requirements that doesn't say too much about the database's design and construction.
+You have worked with customers to gain a full understanding of the problem at hand. The result should be a big pile of facts, goals, needs and requirements that should be part of the new database and its surrounding ecosystem. You may already have made some connections among various parts of this information, but mostly it should be a big heap of requirements that doesn't say too much about the database's design and construction.
 
 This kind of pile of information is sometimes called a contextual list. It's basically just a list of important stuff (although it may be fairly elaborate and include requirements documents, diagrams, charts and all sorts of other supporting documentation)
 
-The next step in turing the conceptual list into a database is converting it into a more formal model. You can compare the formal model to the contextual list and make sure that the model can handle all of your requirements.
+The next step in turning the conceptual list into a database is converting it into a more formal model. You can compare the formal model to the contextual list and make sure that the model can handle all of your requirements.
 
 ## What are Data Models
 
-A model is a plan. It's a blueprint for building something, in this case, a database. The purpose of the model isn't do anything by itslef. Instead, it gives you a concrete way to think about the database that you are going to build. By studying the pieces of the model, you can decide whether it represents all of the data that you need to meet your customers' needs.
+A model is a plan. It's a blueprint for building something, in this case, a database. The purpose of the model isn't to do anything by itself. Instead, it gives you a concrete way to think about the database that you are going to build. By studying the pieces of the model, you can decide whether it represents all of the data that you need to meet your customers' needs.
 
 A model is also useful for ensuring that everyone on the project has the same understanding of what needs to be done.
 
@@ -32,7 +32,7 @@ You should also work through any use cases or current scenarios and see if the m
 
 ### User Interface Models
 
-In most database applications, a user will eventuall see the data in some form.For example, an order
+In most database applications, a user will eventually see the data in some form.For example, an order
 entry and tracking application might use a series of screens where the user can perform such chores as
 entering orders, tracking orders, marking an order as paid, looking up available inventory, and so forth.
 Those screens form the database’s user interface.
@@ -74,3 +74,13 @@ An attribute's cardinality tells how many values of that attribute an object mig
 ##### Identifiers
 
 An *object identifier* is a group of one or more attributes that the users will typically use to identify an object in the class.
+
+##### Semantic Views
+Sometimes it is useful to define different views into the same data. Some of this information, such as your name and title is freely available to anyone who wants it.
+
+Other semi-public information is available to anyone within the company but not outside the company.
+
+Defining these different views allows you to make data available only to those who need it. After you finish building a complete semantic object model, you should check each of the views to ensure that they contain all of the information needed for each class of use and nothing else.
+
+#### Class Types
+
