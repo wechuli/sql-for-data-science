@@ -60,12 +60,13 @@ A semantic object model (SOM) is intended to represent a system at a fairly high
 
 Intuitively, a semantic class is a type of thing you might want to represent in your system. This can include physical objects such as people, furniture, inventory items and invoices. It can also include logical abstractions such as report generators, tax years and work queues.
 
-Technically, a semantic class is a named collection of attributes that are sufficient to identify a particular entity. A *semantic object* (SO) is an instance of a semantic class. It is an entity instance that has all of the attributes defined by the class filled in.
+Technically, a semantic class is a named collection of attributes that are sufficient to identify a particular entity. A _semantic object_ (SO) is an instance of a semantic class. It is an entity instance that has all of the attributes defined by the class filled in.
 
 Attributes come in 3 flavors: simple, group and object.
-- A *simple attributes* holds a simple value such as string, number or date.
-- A *group attribute* holds a composite value - a value that is composed of other values.
-- An *object attribute* holds a composite value - a value that is composed of other values.
+
+- A _simple attributes_ holds a simple value such as string, number or date.
+- A _group attribute_ holds a composite value - a value that is composed of other values.
+- An _object attribute_ holds a composite value - a value that is composed of other values.
 
 ##### cardinality
 
@@ -73,9 +74,10 @@ An attribute's cardinality tells how many values of that attribute an object mig
 
 ##### Identifiers
 
-An *object identifier* is a group of one or more attributes that the users will typically use to identify an object in the class.
+An _object identifier_ is a group of one or more attributes that the users will typically use to identify an object in the class.
 
 ##### Semantic Views
+
 Sometimes it is useful to define different views into the same data. Some of this information, such as your name and title is freely available to anyone who wants it.
 
 Other semi-public information is available to anyone within the company but not outside the company.
@@ -83,4 +85,36 @@ Other semi-public information is available to anyone within the company but not 
 Defining these different views allows you to make data available only to those who need it. After you finish building a complete semantic object model, you should check each of the views to ensure that they contain all of the information needed for each class of use and nothing else.
 
 #### Class Types
+
+##### Simple Objects
+
+A simple atomic object is one that contains only single-valued simple attributes.
+
+##### Composite Objects
+
+A composite object contains at least one multi-valued, non-object attribute.
+
+##### Compound Objects
+
+A compound object contains at least one object attribute.
+
+##### Hybrid Objects
+
+A hybrid object contains a combination of the other kinds of attributes.
+
+##### Association Objects
+
+An association object represents a relationship between two other objects and stores extra information about the relationship.
+
+##### Inherited Objects
+
+Sometimes one class might share most of the characteristics of another class but with a few differences.
+
+Semantic object models are fairly good at capturing the basic classes involved in a project, and through object attributes they do a decent job of showing which classes are related to other classes. However, they don't capture every possible scrap of information about a project.
+
+Remember that the point of a semantic model (or any model for that matter) is to help you understand the problem. If the model alone doesn't capture the full scope of that problem, add comments, notes, attachments, video clips etc.
+
+### Entity-Relationship Models
+
+An entity-relationship diagram (ER diagram or ERD) is another form of object model that in many ways is similar to a semantic object model. It also allows you to represent objects and their relationships although it uses different symbols. ER diagrams also have a different focus, providing a bit more emphasis on relations and a bit less on class structure.
 
