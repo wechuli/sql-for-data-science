@@ -118,3 +118,56 @@ Remember that the point of a semantic model (or any model for that matter) is to
 
 An entity-relationship diagram (ER diagram or ERD) is another form of object model that in many ways is similar to a semantic object model. It also allows you to represent objects and their relationships although it uses different symbols. ER diagrams also have a different focus, providing a bit more emphasis on relations and a bit less on class structure.
 
+#### Entities, Attributes, and Identifiers
+
+An entity is similar to a semantic object. It represents a specific instance of something that you want to track in the object model. Like semantic objects, an entity can be a physical thing (employee, work order,) or a logical abstraction ( appointment, discussion)
+
+Similar entities are grouped into entity classes or entity sets. Like semantic objects, entities include attributes that describe the object that they represent.There are a couple of different methods for drawing entity sets. In the first method, a set is contained within a rectangle. Its attributes are drawn within ellipses and attached to the set with lines. If one of the attributes is an identifier (also called a key or primary key), its name is underlined.
+
+![](assets/erd.PNG)
+
+
+A second approach is to draw entity sets in a manner similar to the one used by semantic object models
+and then place only the set’s name in the ER diagram. Lines and other symbols, which are described
+shortly, connect the entity sets to show their relationships. This approach allows you greater room for
+listing attributes while removing them from the main ER diagram so it can focus on relationships.
+
+#### Relationships
+
+An ER diagram indicates a relationship with a diamond containing the relationship's name. The name is usually something very descriptive such as Contains, Works For, or Deceives, so often the relationship is perfectly understandable on its own. If the name isn't enough, you can add attributes to a relationship just as you can add them to entities: by placing the attribute in an ellipse and attaching it to the relationship with a line.
+
+Note that every relation implicitly defines a reverse relation.
+
+#### Cardinality
+
+To add cardinality information, ER diagrams add one or more of three symbols to the lines leading in and out of entity sets. The three symbols are:
+- ring: A ring means zero
+- line: A short line means one
+- crow's foot: A crow's foot  means many
+
+#### Inheritance
+
+Like a semantic object model, an ER diagram can represent inheritance. An ER diagram represents inheritance as a special relationship names IsA that's drawn inside a triangle. One point of the triangle points toward the parent class. Other lines leading into the triangle attach in the triangle's side.
+
+![](assets/inh.PNG)
+
+#### Additional Conventions
+
+ER diagrams use a few other conventions to add fine shades of meaning to a model. If every entity in an entity set must participate in the relationship, the diagram includes a thick or double line. This is called a participation constraint because each entity must participate.
+
+A *weak entity* is one that cannot be identified by its attributes alone. In an ER diagram, you draw a weak entity with a thick rectangle and connect it to its identifying relationship with a thick arrow.
+
+### Relational Models
+
+Converting semantic object models and ER diagrams into a relational version isn't too difficult. To convert semantic object models and ER diagrams into relational models, you simply map the classes or entity sets to tables. You then figure out which columns in the tables form the foreign key relationships among the tables.
+
+Each table's primary key is underlined. Lines connect the fields that form foreign key relationships. The number at the ends of these lines give the numbers of items participating in the relationship. In this example, all of the relationship are one-to-many relationships.
+
+
+### Summary
+
+Different kinds of models help define a problem. They identify the entities that are significant to the problem and they clarify the relationships among those entities. You can then use the models to test your understanding of the problem and to verify that the models provide the data you need to satisfy the problem's use cases and other requirements.
+- Build user interface models to learn what kind of data the database will need to store
+- Build semantic object models to study the objects that will interact while solving the problem
+- Build entity-relationship diagrams to study the entities that are involved in the problem and to examine their interactions
+- Convert semantic object models and entity-relationship diagrams into relational models.
