@@ -61,12 +61,64 @@ Types of rules that make good candidates for extra attention include:
 - **Very complicated checks** - Some checks are so complex that it's just easier to move them into code, either stored within the database or in external code modules.
 
 Types of rules that are usually not worth special attention and can just be implemented directly in the database include:
+
 - **Enumerated types with fixed values**
 - **Data type requirements**
 - **Required Values**
 - **Sanity Checks**
 
-
 So write down all of the business rules you can discover. Include the domains of every field and any simple bounds checks in addition to more complicated rules.
 
 Group the rules by how likely they are to change and how hard they would be to change. Then take a closer look at the ones that are likely to change and that will be hard to change and see it you shouldn't pull them out of the database's structure.
+
+## Extracting Key Business Rules
+
+Now that you've identified the business rules that will be tricky to implement within the database or that may change frequently, pull them out of the database. There are a couple of standard approaches for doing that.
+
+- First, if the rule is a validation list, convert it into a foreign key constraint.
+- Second, if the rule is a fairly straightforward calculation with parameters that may change, pull the parameters out and put them in a table.
+- Third, if a calculation is complicated, extract it into code. That doesn't necessarily mean you need to write the code in programming language, many database products can store and execute stored procedures. A stored procedure can select and iterate through records, perform calculations, make comparisons and do just about anything that a full-fledged programming language can.
+
+So what's the point of moving checks into a stored procedure ? Partly, it's a matter of perception. Pulling the check out of the database's table structure and making it a stored procedure separates it logically from the tables. That makes it easier to divide up maintenance work on the database into structural work and programming work.
+
+Of course, you can also build the check into code written in a traditional programming language. You may be able to invoke that code from the database or you might use it in the project's user interface.
+
+## Multi-Tier Applications
+
+A multi-tier application uses several different layers to handle different data-related tasks. The most common form of multi-tier application uses three tiers.
+
+The first tier (often called the user interface tier or use interface layer) is the user interface. It displays data and lets the use manipulate it. It might perform some basic data validation such as ensuring that required fields are filled in and that numeric values are actually numbers, but it doesn't implement complicated business rules.
+
+The third tier (often called the data or database tier or layer) is the database. It stores the data with as few restrictions as possible.
+
+The middle tier (often called the middle or business tier or layer) is a service layer that moves data between the first and third tiers. This is the tier that implements all of the business rules. When the user interface tier tries to send data back to the database, the middle tier verifies that the data satisfies the business rules and either sends the data to the data tier or complains to the user interface tier. When it fetches data
+from the database, the middle tier may also perform calculations on the data to create derived values to
+forward to the user interface tier.
+
+The main goal of a multi-tier architecture is to increase flexibility.The user interface and database
+tiers can work relatively independently while the middle tier provides any necessary translation. For
+example, if the user interface changes so a particular value must be displayed differently (perhaps in
+a dropdown instead of in a text box), it can make that change without requiring any changes to the
+database. If the database must change how a value is stored (perhaps as a string Small/Medium/Large
+instead of as a numeric size code), the user interface doesn’t need to know about it. The middle tier
+might need to be adjusted to handle any differences but the first and third tiers are isolated from
+each other.
+
+The middle tier also concentrates most of the business logic. The user interface and database perform
+basic validations but the middle tier does all of the heavy lifting.
+
+Another advantage of multi-tier systems is that the tiers can run on different computers. The database
+might run one a computer at corporate headquarters, the middle tier libraries might run on a second
+computer (or even split across two other computers), and the user interface can run on many users’
+computers. Or all three tiers might run on the same computer. Separating the tiers lets you shuffle them
+around to fit your computing environment.
+
+In practice, there’s some benefit to placing at least some checks in the database tier so, if there’s a problem
+in the rest of the application, the database has the final say.
+
+There’s also some value to placing basic checks in the user interface so the application doesn’t need to
+perform unnecessary round trips to the database.
+
+Adding validations in both the user interface and the database requires some redundancy, but it’s worth
+it. (Also notice that the user interface developers and database programmers can do their work separately
+so they can work in parallel.)
